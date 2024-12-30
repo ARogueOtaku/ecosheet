@@ -12,7 +12,7 @@ type DashboardSearchParams = {
 export default async function Dashboard({
   searchParams,
 }: {
-  searchParams: DashboardSearchParams;
+  searchParams: Promise<DashboardSearchParams>;
 }) {
   const { from, to } = await searchParams;
   const isAdminUser = !!(await getUser())?.isAdmin;
