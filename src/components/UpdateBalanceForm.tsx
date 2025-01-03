@@ -1,7 +1,6 @@
 "use client";
 
 import { TransactionType } from "@/database/schema";
-// import { login } from "@/server/actions/user";
 import { updateBalance } from "@/server/actions/economy";
 import { useActionState } from "react";
 
@@ -20,6 +19,12 @@ export default function UpdateBalanceForm() {
           placeholder="amount"
           name="amount"
           required
+          className="w-fit border border-black p-1"
+        />
+        <input
+          type="text"
+          placeholder="reason"
+          name="reason"
           className="w-fit border border-black p-1"
         />
         <select

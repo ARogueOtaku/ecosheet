@@ -15,5 +15,6 @@ export type TransactionData = {
   time: number;
   type: "Credit" | "Debit";
   name?: string | null;
+  reason?: string | null;
   balance: string;
 };

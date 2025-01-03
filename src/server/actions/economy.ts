@@ -13,6 +13,7 @@ export async function updateBalance(
   form: FormData
 ): Promise<ServerActionResponse> {
   const amount = form.get("amount")?.toString() ?? "";
+  const reason = form.get("reason")?.toString();
   const type = (form.get("type")?.toString() ?? "Credit") as "Credit" | "Debit";
   if (amount) {
     if (
@@ -45,6 +46,7 @@ export async function updateBalance(
         amount,
         time: Date.now(),
         type,
+        reason,
         clearbalance: newBalance[0].total,
         userid: user.id,
       });

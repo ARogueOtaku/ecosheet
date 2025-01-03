@@ -47,7 +47,7 @@ export default async function TransactionTable({
       <TableHeaderCell>Date</TableHeaderCell>
       <TableHeaderCell>Amount</TableHeaderCell>
       <TableHeaderCell>Type</TableHeaderCell>
-      <TableHeaderCell>User</TableHeaderCell>
+      <TableHeaderCell>Reason</TableHeaderCell>
       <TableHeaderCell>Clear Balance</TableHeaderCell>
       {transactions.length === 0 && (
         <TableBodyCell fullSpan>No Data</TableBodyCell>
@@ -57,7 +57,7 @@ export default async function TransactionTable({
           <TableBodyCell>{new Date(tx.time).toLocaleString()}</TableBodyCell>
           <TableBodyCell>{tx.amount}</TableBodyCell>
           <TableBodyCell>{tx.type}</TableBodyCell>
-          <TableBodyCell>{tx.name}</TableBodyCell>
+          <TableBodyCell>{tx.reason || "N/A"}</TableBodyCell>
           <TableBodyCell>{tx.balance}</TableBodyCell>
         </Fragment>
       ))}

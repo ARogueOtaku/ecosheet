@@ -22,6 +22,7 @@ export async function getTransactions(from: number, to: number) {
       amount: TransactionTable.amount,
       time: TransactionTable.time,
       balance: TransactionTable.clearbalance,
+      reason: TransactionTable.reason,
       name: UserTable.name,
     })
     .from(TransactionTable)
